@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEDEX SPRENGER</title>
+    <link rel="icon" type="image/x-icon" href="/img/Ball.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <script src="includeHTML.js"></script>
+    <script src="script.js"></script>
+</head>
+<body onload="init()">
+    <header w3-include-html="./templates/header.html"></header>
+    <main>
+        <div id="pokemonContainer" class="pokemonContainer">
+        </div>
+        <div id="nextContainer" class="nextContainer" style="display: block;">
+            <button onclick="getDataForThirtyMoreFromPokeAPI()">Lade mehr...</button>
+        </div>
+    </main>
+    <footer w3-include-html="./templates/footer.html"></footer>
+</body>
+</html>

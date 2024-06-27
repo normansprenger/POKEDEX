@@ -1,0 +1,29 @@
+@media (max-width: 450px) {
+    .headerHeadline{
+        display: none;
+    }
+    .footerContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0px;
+    }
+    footer{
+        height: 15vh;
+    }
+}
+
+@media (min-width: 700px) {
+    .card{
+        width: 200px;
+        height: 250px;
+        font-size: 20px;
+    }
+    .card img{
+        height: 180px;
+    }
+    .cardPokemonId{
+        position: relative;
+        right: 80px;
+        }
+}
