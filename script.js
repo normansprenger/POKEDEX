@@ -60,6 +60,7 @@ function openSinglePokemon(i) {
     document.getElementById('choiceContainer').style = "display: flex";
     document.getElementById('choiceContainer').innerHTML = openSinglePokemonHTML(i, type1, name);
     progressColor(i);
+    document.getElementById('bodyId').style = "overflow: hidden;";
 }
 
 
@@ -90,16 +91,19 @@ function swipeRight(i, event) {
 
 
 function closeChoiceContainer() {
+    document.getElementById('bodyId').style = "";
     document.getElementById('choiceContainer').style = "display: none";
 }
 
 
 function showLoadingScreen() {
+    document.getElementById('bodyId').style = "overflow: hidden;";
     document.getElementById('loadingScreen').style = "display: flex";
 }
 
 
 function disableLoadingScreen() {
+    document.getElementById('bodyId').style = "";
     document.getElementById('loadingScreen').style = "display: none";
 }
 
