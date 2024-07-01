@@ -13,14 +13,22 @@
     <script src="script.js"></script>
 </head>
 <body onload="init()">
-    <header w3-include-html="./templates/header.html"></header>
-    <main>
+    <header id="header" w3-include-html="./templates/header.html"></header>
+    <main id="main">
         <div id="pokemonContainer" class="pokemonContainer">
         </div>
         <div id="nextContainer" class="nextContainer" style="display: block;">
-            <button onclick="getDataForThirtyMoreFromPokeAPI()">Lade mehr...</button>
+            <button id="loadMoreBtn" onclick="getDataForThirtyMoreFromPokeAPI()">load more...</button>
         </div>
     </main>
-    <footer w3-include-html="./templates/footer.html"></footer>
+    <footer id="footer" w3-include-html="./templates/footer.html"></footer>
+    <div id="loadingScreen" class="loadingScreen" style="display: none;" onclick="closeLoadingScreen()">
+        <div class="loadingContainer">
+            <img src="/img/Ball.svg" alt="">
+            <span>loading ...</span>
+        </div>
+    </div>
+    <div id="choiceContainer" class="choiceContainer" style="display: none;" onclick="closeChoiceContainer()">
+    </div>
 </body>
 </html>
