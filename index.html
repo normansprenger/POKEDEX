@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script src="includeHTML.js"></script>
     <script src="script.js"></script>
 </head>
+
 <body onload="init()">
     <header id="header" w3-include-html="./templates/header.html"></header>
     <main id="main">
@@ -23,7 +25,7 @@
     </main>
     <footer id="footer" w3-include-html="./templates/footer.html"></footer>
     <div id="loadingScreen" class="loadingScreen" style="display: none;" onclick="closeLoadingScreen()">
-        <div class="./css/">
+        <div class="loadingContainer">
             <img src="/img/Ball.svg" alt="">
             <span>loading ...</span>
         </div>
@@ -31,4 +33,5 @@
     <div id="choiceContainer" class="choiceContainer" style="display: none;" onclick="closeChoiceContainer()">
     </div>
 </body>
+
 </html>

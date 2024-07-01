@@ -1,7 +1,7 @@
 /* pokemon all cards */
 
 .card {
-    width: 110px;
+    width: 112px;
     height: 160px;
     background-color: rgba(165, 42, 42, 0.057);
     padding: 8px;
@@ -37,6 +37,7 @@
 .cardTypesContainer {
     margin-top: 8px;
     font-size: 14px;
+    padding-bottom: 4px;
 }
 
 .cardPadding {
