@@ -44,7 +44,7 @@ function renderThirtyPokemons() {
         let type1 = pokemon[i].types[0]?.type.name ?? ''; // if there FILL -> else ''
         let type2 = pokemon[i].types[1]?.type.name ?? ''; // if there FILL -> else ''
         let name = capitalizeFirstLetter(pokemon[i]['species']['name']);
-        document.getElementById('pokemonContainer').innerHTML += renderThirtyPokemonsHTML(i, type1 , type2, name);
+        document.getElementById('pokemonContainer').innerHTML += renderThirtyPokemonsHTML(i, type1, type2, name);
     }
 }
 
@@ -56,10 +56,12 @@ function capitalizeFirstLetter(string) {
 
 function openSinglePokemon(i) {
     let type1 = pokemon[i].types[0]?.type.name ?? ''; // if there FILL -> else ''
+    let type2 = pokemon[i].types[1]?.type.name ?? ''; // if there FILL -> else ''
     let name = capitalizeFirstLetter(pokemon[i]['species']['name']);
     document.getElementById('choiceContainer').style = "display: flex";
-    document.getElementById('choiceContainer').innerHTML = openSinglePokemonHTML(i, type1, name);
+    document.getElementById('choiceContainer').innerHTML = openSinglePokemonHTML(i, type1, type2, name);
     progressColor(i);
+    typeColor(type1, type2);
     document.getElementById('bodyId').style = "overflow: hidden;";
 }
 
@@ -120,7 +122,7 @@ function filterNames() {
 }
 
 
-function progressColor(i){
+function progressColor(i) {
     document.getElementById('progressHealth').style = `width: ${pokemon[i]['stats'][0]['base_stat']}%;`;
     document.getElementById('progressAttack').style = `width: ${pokemon[i]['stats'][1]['base_stat']}%;`;
     document.getElementById('progressDefense').style = `width: ${pokemon[i]['stats'][2]['base_stat']}%;`;
@@ -130,10 +132,19 @@ function progressColor(i){
 }
 
 
+function typeColor(type1, type2) {
+    document.getElementById('choiceHeadType1').classList.add(type1);
+    if (!type2 == '')
+        document.getElementById('choiceHeadType2').classList.add(type2);
+    else {
+        document.getElementById('choiceHeadType2').classList.remove("choiceHeadType");
+    };
+}
+
 //html
 
 
-function renderThirtyPokemonsHTML(i, type1 , type2, name){
+function renderThirtyPokemonsHTML(i, type1, type2, name) {
     return /*html*/ `
     <div class="card ${type1}" id="card${i}" onclick="openSinglePokemon(${[i]})">
         <div class="cardPokemonId">ID:${pokemon[i]['id']}</div>
@@ -148,10 +159,16 @@ function renderThirtyPokemonsHTML(i, type1 , type2, name){
 }
 
 
-function openSinglePokemonHTML(i, type1, name){
+function openSinglePokemonHTML(i, type1, type2, name) {
     return /*html*/`
     <div class="choiceCard">
-        <div class="choiceId">ID:${pokemon[i]['id']}</div>
+        <div class="choiceHead">
+            <div class="choiceId">ID:${pokemon[i]['id']}</div>
+            <div class="pokemonTypes">
+            <div class="choiceHeadType" id="choiceHeadType1">${type1}</div>
+            <div class="choiceHeadType" id="choiceHeadType2">${type2}</div>
+            </div>
+        </div>    
         <img class="choiceImg" src="${pokemon[i]['sprites']['front_default']}" alt="">
         <div class="choiceSubContainer">
             <span class="arrow" onclick="swipeLeft(${[i]} , event)"><</span>

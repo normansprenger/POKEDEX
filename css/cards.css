@@ -130,10 +130,26 @@
     border-radius: 16px;
 }
 
-.choiceId {
+.choiceHead {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    right: 100px;
-    top: 30px;
+    top: 20px;
+}
+
+.pokemonTypes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.choiceHeadType {
+    padding: 4px 8px;
+    width: 60px;
+    text-align: center;
+    border-radius: 14px;
 }
 
 .choiceImg {
@@ -144,6 +160,7 @@
     width: 92%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .choiceName {
@@ -156,6 +173,7 @@
     border-radius: 6px;
     font-weight: 800;
     text-decoration: underline;
+    height: 30px;
 }
 
 .arrow {
@@ -177,8 +195,8 @@
 }
 
 .stats h3 {
-    margin-top: 10px;
-    margin-bottom: 6px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 .progressbar {
@@ -206,5 +224,5 @@
 .progress {
     height: 16px;
     border-radius: 8px;
-    max-width: 110%;
+    max-width: 100%;
 }
